@@ -56,7 +56,7 @@ ROOT_URLCONF = 'mac.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['shop/template','blog/template'],
+        'DIRS': ['shop/template','blog/template','mac/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
