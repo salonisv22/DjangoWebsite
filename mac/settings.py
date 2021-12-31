@@ -120,7 +120,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
@@ -151,20 +150,11 @@ LOGGING = {
         },
     },
 }
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-PROJECT_ROOT   =    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-# STATIC_URL = '/static/'
 
-# Extra lookup directories for collectstatic to find static files
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+STATIC_URL = '/static/'
 
-#  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 import dj_database_url
 prod_db  =  dj_database_url.config(conn_max_age=500)
